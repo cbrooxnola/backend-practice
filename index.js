@@ -28,6 +28,9 @@ app.get('/api/players/:id', async(req,res,next)=>{
       WHERE id = $1
     `;
     const response = await client.query(SQL, [req.params.id])
+    if (response.length === 0){
+      throw new Error('This guy is not on the team')
+    }
     res.send(response.rows)
   } catch (error) {
     next(error)
