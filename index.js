@@ -103,7 +103,7 @@ const start = async()=>{
     INSERT INTO players (name, position, jersey) VALUES ('Tagovailoa', 'QB', 1);
   `
   await client.query(SQL)
-  const PORT = process.env.PORT || 3100
+  const PORT = process.env.PORT || 3000
   app.listen(PORT, ()=> {
     console.log('listening on PORT');
   })
